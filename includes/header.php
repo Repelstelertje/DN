@@ -39,7 +39,7 @@
             'id'   => [
                 'param' => 'id',
                 'url'   => '/profile?id=%s',
-                'title' => 'Daten mit %s | ' . $companyName
+                'title' => 'Date met %s | ' . $companyName
             ],
             'tip'  => [
                 'param' => 'tip',
@@ -78,8 +78,8 @@
                     $slug      = strtolower($profileName);
                     $slug      = preg_replace('/[^a-z0-9]+/', '-', $slug);
                     $slug      = trim($slug, '-');
-                    $canonical = $baseUrl . '/daten-met-' . $slug;
-                    $title     = 'Daten met ' . $profileName;
+                    $canonical = $baseUrl . '/date-mit-' . $slug;
+                    $title     = 'Date met ' . $profileName;
                 }
             }
         }
