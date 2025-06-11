@@ -74,4 +74,6 @@ function acceptAllCookies() {
   loadMarketing();
 }
 
+document.getElementById('accept-all').addEventListener('click', acceptAllCookies);
+
 window.onload = initializeCookies;
