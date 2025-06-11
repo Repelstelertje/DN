@@ -4,44 +4,44 @@
 
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					"" => array(
 
-						name 	=> 	"",
-						title 	=> 	"",
-						tekst 	=> 	""
+						'name' => 	"",
+						'title' => 	"",
+						'tekst' => 	""
 						),
 					);
