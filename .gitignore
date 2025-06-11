@@ -1,0 +1,16 @@
+# Ignore composer dependencies
+vendor/
+
+# Ignore PHP error log
+php_errorlog
+
+# Ignore common OS-generated files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE and editor settings
+.idea/
+.vscode/
+
+# Ignore log files
+*.log
