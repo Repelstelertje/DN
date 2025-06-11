@@ -32,7 +32,7 @@
            v-for="profile in filtered_profiles"
           >
         <div class="card h-100">
-            <a :href="'profile.php?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="'Dating in ' + profile.province + ' mit ' + profile.name" :title="'Siehe das Profil von ' + profile.name + ' aus ' + profile.city" @error="imgError"></a>
+            <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="'Dating in ' + profile.province + ' mit ' + profile.name" :title="'Siehe das Profil von ' + profile.name + ' aus ' + profile.city" @error="imgError"></a>
             <div class="card-body">
             	<div class="card-top">
                   <h4 class="card-title">{{ profile.name }}</h4>  
@@ -44,7 +44,7 @@
                 <li class="list-group-item">Bundesland: {{ profile.province }}</li>
               </ul>
             </div>
-            <a :href="'profile.php?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a></div>
+            <a :href="'daten-met-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a></div>
         </div>
       </div>
       <script nonce="2726c7f26c">

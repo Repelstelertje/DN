@@ -53,8 +53,9 @@
             ],
         ];
 
-        $canonical = $BASE_URL;
-        $title     = 'Dating Nebenan – Finde Liebe Direkt Um Die Ecke';
+        $baseUrl       = $BASE_URL;
+        $canonical     = $baseUrl;
+        $title         = 'Dating Nebenan – Finde Liebe Direkt Um Die Ecke';
 
         foreach ($pageMeta as $meta) {
             $param = $meta['param'];
@@ -63,6 +64,28 @@
                 $canonical = $BASE_URL . sprintf($meta['url'], $value);
                 $title     = sprintf($meta['title'], $value);
                 break;
+            }
+        }
+
+        if (isset($_GET['id']) && !empty($_GET['id'])) {
+            $id        = (int) $_GET['id'];
+            $apiUrl    = "https://23mlf01ccde23.com/profile/get0/8/" . $id;
+            $response  = @file_get_contents($apiUrl);
+            if ($response !== false) {
+                $data = json_decode($response, true);
+                $profileName = null;
+                if (isset($data['profile']['name'])) {
+                    $profileName = $data['profile']['name'];
+                } elseif (isset($data['name'])) {
+                    $profileName = $data['name'];
+                }
+                if ($profileName) {
+                    $slug      = strtolower($profileName);
+                    $slug      = preg_replace('/[^a-z0-9]+/', '-', $slug);
+                    $slug      = trim($slug, '-');
+                    $canonical = $baseUrl . '/daten-met-' . $slug;
+                    $title     = 'Daten met ' . $profileName;
+                }
             }
         }
 
