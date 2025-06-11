@@ -34,23 +34,43 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/fav/android-chrome-512x512.png">
     <link rel="manifest" href="img/fav/site.webmanifest">
     <?php
-        $baseUrl = "https://datingnebenan.de"; // Consistent Base URL
-        if(isset($_GET['item']) && !empty($_GET['item'])){
-          $item = htmlspecialchars($_GET['item']);
-          echo '<link rel="canonical" href="' . $baseUrl . '/dating-' . $item . '" >';
-          echo '<title>Dating ' . $item . ' | Dating Nebenan</title>';
-        } else if(isset($_GET['id']) && !empty($_GET['id'])){
-          $id = htmlspecialchars($_GET['id']);
-          echo '<link rel="canonical" href="' . $baseUrl . '/profile?id=' . $id . '" >';
-          echo '<title>Daten mit ' . $id . ' | Dating Nebenan</title>';
-        } else if(isset($_GET['tip']) && !empty($_GET['tip'])){
-          $tip = htmlspecialchars($_GET['tip']);
-          echo '<link rel="canonical" href="' . $baseUrl . '/datingtips-' . $tip . '" >';
-          echo '<title>Datingtips ' . $tip . ' | Dating Nebenan</title>';
-        } else {
-          echo '<link rel="canonical" href="' . $baseUrl . '" >';
-          echo '<title>Dating Nebenan – Finde Liebe Direkt Um Die Ecke</title>';
+        include_once('includes/config.php');
+        $pageMeta = [
+            'item' => [
+                'param' => 'item',
+                'url'   => '/dating-%s',
+                'title' => 'Dating %s | ' . $companyName
+            ],
+            'id'   => [
+                'param' => 'id',
+                'url'   => '/profile?id=%s',
+                'title' => 'Daten mit %s | ' . $companyName
+            ],
+            'tip'  => [
+                'param' => 'tip',
+                'url'   => '/datingtips-%s',
+                'title' => 'Datingtips %s | ' . $companyName
+            ],
+        ];
+
+        $canonical = $BASE_URL;
+        $title     = 'Dating Nebenan – Finde Liebe Direkt Um Die Ecke';
+
+        foreach ($pageMeta as $meta) {
+            $param = $meta['param'];
+            if (isset($_GET[$param]) && !empty($_GET[$param])) {
+                $value     = htmlspecialchars($_GET[$param]);
+                $canonical = $BASE_URL . sprintf($meta['url'], $value);
+                $title     = sprintf($meta['title'], $value);
+                break;
+            }
         }
+
+        echo '<link rel="canonical" href="' . $canonical . '" >';
+        echo '<meta property="og:url" content="' . $canonical . '">';
+        echo '<meta property="og:title" content="' . $title . '">';
+        echo '<meta property="og:type" content="website">';
+        echo '<title>' . $title . '</title>';
     ?>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD" nonce="2726c7f26c" SameSite=None; Secure></script>
@@ -70,7 +90,7 @@
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="https://datingnebenan.de/">Dating Nebenan</a>
+                <a class="navbar-brand" href="<?php echo $BASE_URL; ?>/">Dating Nebenan</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menü</button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <?php  include('includes/nav.php'); ?>

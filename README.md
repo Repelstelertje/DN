@@ -18,7 +18,7 @@ php -S localhost:8000
 
 The project uses a few hard coded URLs that may need to be adjusted for different environments:
 
-- **Base URL** – defined in `includes/header.php` as `$baseUrl`. Set this to the public domain used for deployment so canonical links are generated correctly.
+- **Base URL** – configure via the `BASE_URL` environment variable or edit `includes/config.php`. This value is referenced when generating canonical and Open Graph URLs.
 - **API endpoints** – various pages define `api_url` JavaScript variables (see `index.php`, `profile.php` and `provincie.php`). Update these values to point to your own API server.
 
 ## Running locally
