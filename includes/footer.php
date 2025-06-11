@@ -11,7 +11,7 @@
         <li><a href="partnerlinks" class="m-0">Weitere Partnerlinks...</a></li>
     </ul>
     <span class="sub-text">Impressum &copy; <?php echo date('Y'); ?> <?php echo $companyName; ?> | Finde Liebe Direkt Um Die Ecke</span>
-    <span class="policy-links sub-text"><a href="/privacy.php">Privacybeleid</a> | <a href="/cookie-policy.php">Cookiebeleid</a></span>
+    <span class="policy-links sub-text"><a href="/privacy.php">Datenschutz</a> | <a href="/cookie-policy.php">Cookie-Richtlinie</a></span>
 </footer>
 </div> <!-- /.oproepjes -->
 
