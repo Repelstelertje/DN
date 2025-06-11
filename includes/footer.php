@@ -49,7 +49,7 @@
       <label><input type="checkbox" id="cookie-statistics"> Statistics (e.g. Google Analytics)</label><br>
       <label><input type="checkbox" id="cookie-marketing"> Marketing (e.g. Google Ads, Meta Pixel)</label><br><br>
       <button type="submit" style="background-color: #007BFF; color: white; border: none; padding: 10px 15px; margin-right: 10px; cursor: pointer;">Save preferences</button>
-      <button type="button" onclick="acceptAllCookies()" style="background-color: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer;">Accept all</button>
+      <button type="button" id="accept-all" style="background-color: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer;">Accept all</button>
     </form>
   </div>
 </div>
