@@ -1,17 +1,22 @@
 <?php 
 
   include('includes/array_prov.php');
-	include('includes/header.php');
+  include('includes/utils.php');
 
-	function strip_bad_chars( $input ) {
-		$output = preg_replace( "/[^a-zA-Z0-9_-]/", "",$input);
-		return $output;
-	}
-	
-	if(isset($_GET['item'])) {
-		$provincie = strip_bad_chars( $_GET['item'] );
-		$zoek = $provincies[$provincie];
-	}
+  if(isset($_GET['item'])) {
+    $provincie = strip_bad_chars($_GET['item']);
+    if (array_key_exists($provincie, $provincies)) {
+      $zoek = $provincies[$provincie];
+    } else {
+      include('404.php');
+      exit;
+    }
+  } else {
+    include('404.php');
+    exit;
+  }
+
+  include('includes/header.php');
 ?>
 	
 	<div class="container">

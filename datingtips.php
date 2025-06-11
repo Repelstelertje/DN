@@ -1,19 +1,24 @@
 <?php 
 	define("TITLE", "Datingtips");
 
-  	include('includes/array_tips.php');
-  	include('includes/array_prov.php');
-	include('includes/header.php');
+        include('includes/array_tips.php');
+        include('includes/array_prov.php');
+        include('includes/utils.php');
 
-	function strip_bad_chars( $input ) {
-		$output = preg_replace( "/[^a-zA-Z0-9_-]/", "",$input);
-		return $output;
-	}
-	
-	if(isset($_GET['tip'])) {
-		$datingtip = strip_bad_chars( $_GET['tip'] );
-		$tips = $datingtips[$datingtip];
-	}
+        if(isset($_GET['tip'])) {
+                $datingtip = strip_bad_chars( $_GET['tip'] );
+                if (array_key_exists($datingtip, $datingtips)) {
+                        $tips = $datingtips[$datingtip];
+                } else {
+                        include('404.php');
+                        exit;
+                }
+        } else {
+                include('404.php');
+                exit;
+        }
+
+        include('includes/header.php');
 ?>
 
 <div class="container">
