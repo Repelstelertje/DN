@@ -25,7 +25,7 @@
         style-src 'self' https://tagmanager.google.com https://fonts.googleapis.com/ https://23mlf01ccde23.com/ 'unsafe-inline'; 
         style-src-elem 'self' https://tagmanager.google.com https://fonts.googleapis.com/ https://23mlf01ccde23.com/ 'unsafe-inline'; 
         connect-src 'self' https://region1.google-analytics.com https://tagmanager.google.com/ https://www.google-analytics.com https://16hl07csd16.nl/ https://20fhbe2020.be/ https://23mlf01ccde23.com/;
-        script-src 'self' http://* https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/ https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/ https://23mlf01ccde23.com/ 'nonce-googletagmanager' 'nonce-2726c7f26c' 'sha256-WwSlXI54tpz3oRisOne8KKEqXFjbTYCI2AzKef7+7nE=' 'unsafe-inline' 'unsafe-eval'
+        script-src 'self' http://* https://www.googletagmanager.com https://www.google-analytics.com https://ssl.google-analytics.com https://cdn.jsdelivr.net https://23mlf01ccde23.com/ 'nonce-googletagmanager' 'nonce-2726c7f26c' 'sha256-WwSlXI54tpz3oRisOne8KKEqXFjbTYCI2AzKef7+7nE=' 'unsafe-inline' 'unsafe-eval'
     " >
     <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
