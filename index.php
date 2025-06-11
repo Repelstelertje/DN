@@ -42,7 +42,7 @@
             </div>
         </div>
         <script nonce="2726c7f26c">
-            var api_url= "https://23mlf01ccde23.com/profile/banner9/120";
+            var api_url= "https://23mlf01ccde23.com/profile/banner/12";
         </script>
         <!-- Pagination -->
         <nav class="nav-pag" aria-label="Page navigation">
