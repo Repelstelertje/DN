@@ -10,8 +10,8 @@
         <li><a href="https://e-notifyer.nl/" target="_blank" class="m-0">E-notifyer</a> - </li>
         <li><a href="partnerlinks" class="m-0">Weitere Partnerlinks...</a></li>
     </ul>
-    <span class="sub-text">Impressum &copy; <?php echo date('Y'); ?> <?php echo $companyName; ?> | Finde Liebe Direkt Um Die Ecke
-</span>
+    <span class="sub-text">Impressum &copy; <?php echo date('Y'); ?> <?php echo $companyName; ?> | Finde Liebe Direkt Um Die Ecke</span>
+    <span class="policy-links sub-text"><a href="/privacy.php">Privacybeleid</a> | <a href="/cookie-policy.php">Cookiebeleid</a></span>
 </footer>
 </div> <!-- /.oproepjes -->
 
