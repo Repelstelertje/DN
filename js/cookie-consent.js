@@ -19,14 +19,14 @@ function getCookieConsent() {
 function loadAnalytics() {
   // Google Analytics
   const script = document.createElement('script');
-  script.src = "https://www.googletagmanager.com/gtag/js?id=G-ZGF9E4WFZD";
+  script.src = "https://www.googletagmanager.com/gtag/js?id=G-47K5Q4WKT9";
   script.async = true;
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-ZGF9E4WFZD');
+  gtag('config', 'G-47K5Q4WKT9');
 }
 
 function loadMarketing() {
@@ -55,21 +55,16 @@ function initializeCookies() {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('cookie-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const statistics = document.getElementById('cookie-statistics').checked;
-    const marketing = document.getElementById('cookie-marketing').checked;
-    setCookieConsent(statistics, marketing);
-    document.getElementById('cookie-banner').style.display = 'none';
-    if (statistics) loadAnalytics();
-    if (marketing) loadMarketing();
-  });
-
-  document.getElementById('accept-all-cookies').addEventListener('click', acceptAllCookies);
-
-  initializeCookies();
+document.getElementById('cookie-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const statistics = document.getElementById('cookie-statistics').checked;
+  const marketing = document.getElementById('cookie-marketing').checked;
+  setCookieConsent(statistics, marketing);
+  document.getElementById('cookie-banner').style.display = 'none';
+  if (statistics) loadAnalytics();
+  if (marketing) loadMarketing();
 });
+
 function acceptAllCookies() {
   document.getElementById('cookie-statistics').checked = true;
   document.getElementById('cookie-marketing').checked = true;
@@ -78,3 +73,5 @@ function acceptAllCookies() {
   loadAnalytics();
   loadMarketing();
 }
+
+window.onload = initializeCookies;
