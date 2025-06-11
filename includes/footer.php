@@ -30,7 +30,7 @@
   $('<a href="https://testars-consin.icu/543064f4-6080-4845-8f43-30f049426cdf?site={DN}"><img class="align-center" src="img/banners/' + footer[Math.floor(Math.random() * footer.length)] + '" alt="Spannende Orte für Kontakte"></a>').appendTo('#footer-banner');
 </script>
 
-<?php 
+<?php
   if(isset ($type) && $type == "profile"){
 
     echo '<script src="js/profile.js"></script>';
@@ -39,6 +39,22 @@
     echo '<script src="js/oproepjes.js"></script>';
   }
 ?>
+
+<!-- Cookie Consent Banner -->
+<div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #fff; border-top: 1px solid #ccc; font-family: Arial, sans-serif; padding: 20px; z-index: 10000; display: none;">
+  <div style="max-width: 960px; margin: auto;">
+    <p style="margin-bottom: 10px;">We use cookies to personalize content and ads, to provide social media features and to analyze our traffic. For more details, see our <a href="/cookie-policy.php" target="_blank">Cookie Policy</a>.</p>
+    <form id="cookie-form">
+      <label><input type="checkbox" disabled checked> Necessary (required)</label><br>
+      <label><input type="checkbox" id="cookie-statistics"> Statistics (e.g. Google Analytics)</label><br>
+      <label><input type="checkbox" id="cookie-marketing"> Marketing (e.g. Google Ads, Meta Pixel)</label><br><br>
+      <button type="submit" style="background-color: #007BFF; color: white; border: none; padding: 10px 15px; margin-right: 10px; cursor: pointer;">Save preferences</button>
+      <button type="button" onclick="acceptAllCookies()" style="background-color: #28a745; color: white; border: none; padding: 10px 15px; cursor: pointer;">Accept all</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/cookie-consent.js"></script>
 
 </body>
 
