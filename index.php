@@ -1,16 +1,21 @@
 <?php
-	define("TITLE", "De beste datingsite van België");
+    $config = include('includes/config.php');
+    if (!empty($config['DEBUG'])) {
+        ini_set('display_errors', 1);
+        ini_set('display_startup_errors', 1);
+        error_reporting(E_ALL);
+    }
+    define("TITLE", "Dating Nebenan – Finde Liebe Direkt Um Die Ecke");
 
-    include('includes/array_prov.php');
-    include('includes/array_tips.php');
-  	include('includes/header.php');
+    include("includes/array_prov.php");
+    include("includes/array_tips.php");
+    include("includes/header.php");
 ?>
-
-	<div class="container">
-		<!-- Jumbotron Header -->
-		<div class="jumbotron my-4 text-center">
-  		<h1>Dating Nebenan – Finde Liebe Direkt Um Die Ecke</h1>
-  		<hr>
+<div class="container">
+    <!-- Jumbotron Header -->
+    <div class="jumbotron my-4 text-center">
+        <h1>Dating Nebenan – Finde Liebe Direkt Um Die Ecke</h1>
+        <hr>
         <p>Entdecke deine nächste Liebe bei <a href="index.php">Dating Nebenan</a>, deinem vertrauenswürdigen Portal für kontaktanzeigen, wo die Suche nach der Liebe dich durch die Schönheit der Provinzen Deutschlands führt. Wir bringen Menschen zusammen, die nach echten Verbindungen und bedeutungsvollen Beziehungen in ihrer unmittelbaren Umgebung suchen. Von Bayern bis Schleswig-Holstein, Dating Nebenan macht es einfach, jemanden Besonderen in deiner Nähe zu finden.</p>
         <h2>Finde hier Frauen in deiner Nähe</h2>
         <?php
@@ -41,8 +46,8 @@
                 <a :href="'date-mit-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a>
             </div>
         </div>
-        <script nonce="2726c7f26c">
-            var api_url= "https://23mlf01ccde23.com/profile/banner/12";
+        <script>
+            var api_url= "<?php echo $config['BANNER_ENDPOINT']; ?>";
         </script>
         <!-- Pagination -->
         <nav class="nav-pag" aria-label="Page navigation">
@@ -80,6 +85,12 @@
         <p><em>“Mein Name ist Jean. Ich habe vor über einem Jahr mit Online-Dating begonnen, weil es für mich aufgrund meiner Behinderung manchmal schwierig ist, Leute kennenzulernen. Ich bin nämlich seit meiner Geburt sehr schwerhörig. Obwohl das für mich nicht immer eine Hürde darstellt, ist es für manche doch eine ziemliche Herausforderung. Schließlich muss man die Gebärdensprache kennen oder lernen, was für viele eine schwierige Aufgabe ist, und sie entscheiden sich, keine Beziehung einzugehen. Über Ihre Website Zoekertjes België bin ich mit Juliette in Kontakt gekommen. Es stellte sich heraus, dass sie eine kleine Tochter hatte, die ebenfalls in jungen Jahren ihr Gehör verloren hatte. Das gab mir sofort ein Gefühl der Anerkennung. Wir sind nun schon seit Monaten zusammen, aber ich wollte ein Dankeschön an findertjes Belgien schicken. Es ist fantastisch, dass sich Menschen auf diese Weise erreichen können! Chapeau!”</em><br />
         <span class="stelletje"> - Jean und Juliette</span></p>
     </div>
+    <div class="jumbotron text-center">
+        <h2>Dating-Tipps</h2>
+        <?php foreach ($datingtips as $tips => $item) { ?>
+        <a href="datingtips-<?php echo $tips; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
+        <?php } ?>
+    </div>
     <div id="footer-banner"></div>
     <div class="jumbotron text-center">
         <div class="">
@@ -115,6 +126,4 @@
         </div>
     </div>
 </div><!-- container -->
-<?php
-  	include('includes/footer.php');
-?>
+<?php include('includes/footer.php'); ?>

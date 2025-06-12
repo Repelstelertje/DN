@@ -22,6 +22,9 @@ var oproepjes= new Vue({
     },
     methods:  {
         init: function(){
+            if (typeof api_url === 'undefined' || !api_url) {
+                return;
+            }
             axios.get(api_url)
                 .then(function(response){
                     var profs = response.data.profiles;
@@ -36,6 +39,7 @@ var oproepjes= new Vue({
                     oproepjes.profiles = profs;
                 })
                 .catch(function (error) {
+                    // console.log(error); // removed debugging statement
                 });
         },
         imgError: function(event){

@@ -71,12 +71,12 @@
 	$navItems2 = array(
 
 					array(
-						'slug' => '',
-						'title' => ''
+						'slug' => 'datingtipps',
+						'title' => 'Datingtipps'
 					),
 					array(
-						'slug' => '',
-						'title' => ''
+						'slug' => 'gratis-dating',
+						'title' => 'Gratis-Dating'
 					),
 					array(
 						'slug' => '',

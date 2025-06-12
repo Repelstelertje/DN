@@ -29,8 +29,8 @@
     <div id="footer-banner"></div>
 </div><!-- Container -->
 
-<script nonce="2726c7f26c">    
-    var api_url= "https://23mlf01ccde23.com/profile/get0/9/";
+<script>    
+    var api_url= "<?php echo $config['PROFILE_ENDPOINT']; ?>";
     var ref_id= "32"; //de ref_id vd landingwebsite
 </script>
 <?php 

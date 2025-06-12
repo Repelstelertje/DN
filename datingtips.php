@@ -1,24 +1,15 @@
 <?php 
-	define("TITLE", "Datingtips");
+	define("TITLE", "Dating-Tipps");
 
         include('includes/array_tips.php');
         include('includes/array_prov.php');
+        include('includes/header.php');
         include('includes/utils.php');
 
         if(isset($_GET['tip'])) {
                 $datingtip = strip_bad_chars( $_GET['tip'] );
-                if (array_key_exists($datingtip, $datingtips)) {
-                        $tips = $datingtips[$datingtip];
-                } else {
-                        include('404.php');
-                        exit;
-                }
-        } else {
-                include('404.php');
-                exit;
+                $tips = $datingtips[$datingtip];
         }
-
-        include('includes/header.php');
 ?>
 
 <div class="container">
