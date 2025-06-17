@@ -22,7 +22,7 @@
                     <li class="list-group-item">Familienstand: {{ profile.relationship }}</li>
                     <li class="list-group-item">Größe: {{ profile.length }}</li>
                 </ul>
-                <a :href="profile.url + '?ref=' + ref_id" class="btn btn-primary mt-1">Gratis Nachricht senden</a>
+                <a :href="profile.url + '?ref=' + ref_id" class="btn btn-primary mt-1" id="send-msg-btn">Gratis Nachricht senden</a>
             </div>  
         </div><!-- /.row -->
     </div>
