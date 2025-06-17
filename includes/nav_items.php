@@ -70,10 +70,10 @@
 
 	$navItems2 = array(
 
-					array(
-						'slug' => 'datingtipps',
-						'title' => 'Datingtipps'
-					),
+                                        array(
+                                                'slug' => 'datingtips',
+                                                'title' => 'Datingtipps'
+                                        ),
 					array(
 						'slug' => 'gratis-dating',
 						'title' => 'Gratis-Dating'
