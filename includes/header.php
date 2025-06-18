@@ -1,6 +1,7 @@
 <?php
   $companyName = "Dating Nebenan";
   include('includes/nav_items.php');
+  include('includes/array_tips.php');
   $config = include('includes/config.php');
 
   // Enable verbose error reporting only when APP_DEBUG=true
