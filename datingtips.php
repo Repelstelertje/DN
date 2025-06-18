@@ -13,6 +13,8 @@
                 } else {
                         $tips = ['title' => '', 'tekst' => ''];
                 }
+        } else {
+                $tips = ['title' => 'Datingtipps', 'tekst' => ''];
         }
 ?>
 
