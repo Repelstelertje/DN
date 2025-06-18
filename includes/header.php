@@ -79,7 +79,7 @@
         $default_title = "Zoekertjes België - Vind en Plaats zoekertjes in België";
         $default_description = "Zoek en plaats eenvoudig oproepjes in heel België. Van dating tot vriendschap, ontdek de beste oproepjes op Zoekertjes België.";
         $default_image = $baseUrl . "/img/bg.jpg";
-        $default_url = $baseUrl;
+        $default_url = $canonicalUrl;
         // Dynamisch genereren van inhoud gebaseerd op de pagina-URL
         $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
         // Mapping van URL-sleutels naar Open Graph gegevens
@@ -175,7 +175,7 @@
                 $og_title = $data['title'];
                 $og_description = $data['description'];
                 $og_image = $data['image'];
-                $og_url = $current_url;
+                $og_url = $canonicalUrl;
                 break;
             }
         }
