@@ -37,7 +37,9 @@
     <?php
         // Canonical URL logic
         $baseUrl = "https://datingnebenan.de";
-        $canonicalUrl = $baseUrl; // Default canonical URL
+        // Default canonical URL uses current request URI so every page gets
+        // its own canonical tag
+        $canonicalUrl = $baseUrl . $_SERVER['REQUEST_URI'];
         $title = "Dating Nebenan"; // Default title
         if (isset($_GET['item'])) {
             $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
@@ -68,7 +70,9 @@
             $title = "Datingtips " . htmlspecialchars($_GET['tip']);
         }
         echo '<link rel="canonical" href="' . $canonicalUrl . '" >';
-        echo '<title>' . $title . '</title>';
+        // Prefer a TITLE constant when defined
+        $pageTitle = defined('TITLE') ? TITLE : $title;
+        echo '<title>' . $pageTitle . '</title>';
     ?>
     <?php
         // Stel standaardwaarden in
