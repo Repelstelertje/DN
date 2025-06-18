@@ -87,8 +87,12 @@
     </div>
     <div class="jumbotron text-center">
         <h2>Dating-Tipps</h2>
-        <?php foreach ($datingtips as $tips => $item) { ?>
-        <a href="datingtips-<?php echo $tips; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
+        <?php foreach ($datingtips as $slug => $item) {
+            if (empty($slug) || empty($item['name'])) {
+                continue;
+            }
+        ?>
+        <a href="datingtips-<?php echo $slug; ?>" class="btn btn-primary btn-tips"><?php echo $item['name']; ?></a>
         <?php } ?>
     </div>
     <div id="footer-banner"></div>
