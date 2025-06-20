@@ -23,9 +23,9 @@ function loadAnalytics() {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-47K5Q4WKT9');
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', 'G-47K5Q4WKT9');
 }
 function loadMarketing() {
   // Google Ads Example (conversion tracking)
@@ -35,9 +35,9 @@ function loadMarketing() {
   document.head.appendChild(script);
 
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-7880643696');
+  window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+  window.gtag('js', new Date());
+  window.gtag('config', 'AW-7880643696');
 
   // Facebook Pixel (placeholder)
   // Insert your pixel script here if needed
