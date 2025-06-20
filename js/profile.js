@@ -53,15 +53,22 @@ var profiel= new Vue({
     }
 });
 
-btn.addEventListener('click', function(e) {
-    if (window.gtag) {
-        e.preventDefault(); // wacht met navigeren
-        gtag('event', 'send_free_message_click', {
-            'event_category': 'Profile',
-            'event_label': 'Stuur gratis bericht',
-            'event_callback': function() {
-                window.location.href = btn.href;
-            }
-        });
-    }
+// Track clicks on the "Stuur gratis bericht" button and
+// ensure the event is sent before navigating away
+document.addEventListener('DOMContentLoaded', function() {
+    var btn = document.getElementById('send-msg-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', function(e) {
+        if (window.gtag) {
+            e.preventDefault(); // wacht met navigeren
+            gtag('event', 'send_free_message_click', {
+                'event_category': 'Profile',
+                'event_label': 'Stuur gratis bericht',
+                'event_callback': function() {
+                    window.location.href = btn.href;
+                }
+            });
+        }
+    });
 });
