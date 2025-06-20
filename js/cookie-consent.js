@@ -5,7 +5,11 @@ function setCookieConsent(statistics, marketing) {
     marketing: marketing,
     timestamp: new Date().toISOString()
   };
-  localStorage.setItem('cookieConsent', JSON.stringify(consent));
+  try {
+    localStorage.setItem('cookieConsent', JSON.stringify(consent));
+  } catch (err) {
+    // If storage fails (e.g. in private mode), continue without persisting
+  }
 }
 
 function getCookieConsent() {
