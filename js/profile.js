@@ -53,16 +53,14 @@ var profiel= new Vue({
     }
 });
 
-// Track clicks on the "Stuur gratis bericht" button when analytics is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    var btn = document.getElementById('send-msg-btn');
-    if (btn) {
-        btn.addEventListener('click', function() {
-            if (window.gtag) {
-                gtag('event', 'send_free_message_click', {
-                    'event_category': 'Profile',
-                    'event_label': 'Stuur gratis bericht'
-                });
+btn.addEventListener('click', function(e) {
+    if (window.gtag) {
+        e.preventDefault(); // wacht met navigeren
+        gtag('event', 'send_free_message_click', {
+            'event_category': 'Profile',
+            'event_label': 'Stuur gratis bericht',
+            'event_callback': function() {
+                window.location.href = btn.href;
             }
         });
     }
