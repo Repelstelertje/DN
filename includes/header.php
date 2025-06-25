@@ -92,6 +92,14 @@
     } else if (isset($_GET['tip'])) {
         $canonicalUrl = $baseUrl . "/datingtips-" . htmlspecialchars($_GET['tip']);
         $title = "Datingtipps " . htmlspecialchars($_GET['tip']);
+    } else if (isset($_GET['land'])) {
+        $slugMap = ['de' => 'deutschland', 'at' => 'osterreich', 'ch' => 'schweiz'];
+        $titleMap = ['de' => 'Deutschland', 'at' => 'Österreich', 'ch' => 'Schweiz'];
+        $code = $_GET['land'];
+        if (isset($slugMap[$code])) {
+            $canonicalUrl = $baseUrl . '/dating-' . $slugMap[$code];
+            $title = 'Dating ' . $titleMap[$code];
+        }
     }
     // When no query parameters are present, build canonical from script name
     if (empty($_GET)) {

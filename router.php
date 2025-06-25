@@ -7,6 +7,18 @@ if ($path !== '/' && file_exists($fullPath)) {
     return false; // serve the requested resource as-is
 }
 
+// /dating-deutschland, /dating-osterreich, /dating-schweiz => land.php?land=<code>
+$countryRoutes = [
+    '/dating-deutschland' => 'de',
+    '/dating-osterreich'  => 'at',
+    '/dating-schweiz'     => 'ch',
+];
+if (isset($countryRoutes[$path])) {
+    $_GET['land'] = $countryRoutes[$path];
+    include __DIR__ . '/land.php';
+    return;
+}
+
 // /dating-<slug> => provincie.php?item=<slug>
 if (preg_match('#^/dating-([^/]+)$#', $path, $m)) {
     $_GET['item'] = $m[1];
