@@ -1,6 +1,6 @@
 <?php
 	// Nav Menu Items
-	$navItems = array(
+        $navItems = array(
 
 					array(
 						'slug' => 'dating-baden-wurttemberg',
@@ -66,9 +66,24 @@
 						'slug' => 'dating-thuringen',
 						'title' => 'Thuringen'
 					),
-				);
+                                );
 
-	$navItems2 = array(
+        $navCountries = array(
+                array(
+                        'slug' => 'land.php?land=de',
+                        'title' => 'Dating Deutschland'
+                ),
+                array(
+                        'slug' => 'land.php?land=at',
+                        'title' => 'Dating Österreich'
+                ),
+                array(
+                        'slug' => 'land.php?land=ch',
+                        'title' => 'Dating Schweiz'
+                ),
+        );
+
+        $navItems2 = array(
 
                                         array(
                                                 'slug' => 'datingtips',
