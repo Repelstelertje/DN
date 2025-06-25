@@ -36,7 +36,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <?php
-  $defaultDescription = "Gratis dating - Ben jij op zoek naar een partner of een leuke gratis date? Hier vind je meer dan 10.000 vrijgezellen. Aanmelding is 100% gratis.";
+  $defaultDescription = "Dating nebenan? Finde unkomplizierte Dates mit echten Singles aus deiner Nähe – diskret, direkt, ehrlich.";
   $description = isset($metaDescription) ? $metaDescription : $defaultDescription;
 ?>
 <meta name="description" content="<?php echo htmlspecialchars($description, ENT_QUOTES, 'UTF-8'); ?>">
