@@ -5,22 +5,25 @@
     $land = isset($_GET['land']) ? strip_bad_chars($_GET['land']) : '';
     switch ($land) {
         case 'de':
-            $provinces = $de;
+            $provArray = $de;
+            $landInfo  = $deLand;
             $landTitle = 'Deutschland';
             break;
         case 'at':
-            $provinces = $at;
+            $provArray = $at;
+            $landInfo  = $atLand;
             $landTitle = 'Österreich';
             break;
         case 'ch':
-            $provinces = $ch;
+            $provArray = $ch;
+            $landInfo  = $chLand;
             $landTitle = 'Schweiz';
             break;
         default:
-            $provinces = [];
+            $provArray = [];
+            $landInfo  = [];
             $landTitle = '';
     }
-
     if (empty($landTitle)) {
         header('Location: 404.php');
         exit;
@@ -30,7 +33,7 @@
     include('includes/header.php');
 ?>
 <div class="container">
-    <div class="jumbotron my-4" id="<?php echo $info['id']; ?>">
+    <div class="jumbotron my-4" >
         <h1 class="text-center"><?php echo $landInfo['title']; ?></h1>
         <hr>
         <p><?php echo $landInfo['intro']; ?></p>
