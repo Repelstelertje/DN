@@ -1,12 +1,4 @@
 <ul class="navbar-nav ml-auto">
-    <!-- Provincie links -->
-    <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle drpdwn" href="#" id="navbarDropdownProvinces" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Date in Deutschland</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownProvinces">
-                <?php foreach ($navItems as $item) {echo "<a class=\"dropdown-item\" href=\"$item[slug]\">$item[title]</a>";} ?>
-        </div>
-    </li>
-
     <!-- Land links -->
     <?php foreach ($navCountries as $land) { ?>
         <li class="nav-item">
