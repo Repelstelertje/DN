@@ -18,11 +18,32 @@
         <hr>
         <p>Entdecke deine nächste Liebe bei <a href="index.php">Dating Nebenan</a>, deinem vertrauenswürdigen Portal für kontaktanzeigen, wo die Suche nach der Liebe dich durch die Schönheit der Provinzen Deutschlands führt. Wir bringen Menschen zusammen, die nach echten Verbindungen und bedeutungsvollen Beziehungen in ihrer unmittelbaren Umgebung suchen. Von Bayern bis Schleswig-Holstein, Dating Nebenan macht es einfach, jemanden Besonderen in deiner Nähe zu finden.</p>
         <h2>Finde hier Frauen in deiner Nähe</h2>
-        <?php
-            foreach ($navItems as $item) {
-                echo "<a class=\"btn btn-primary prov-btn\" href=\"$item[slug]\">$item[title]</a>";
-            }
-        ?>
+        <div class="d-flex justify-content-center flex-wrap">
+            <div class="dropdown d-inline-block prov-btn">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownDe" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $deLand['name']; ?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownDe">
+                    <?php foreach ($de as $slugKey => $prov) { $slug = 'dating-' . $slugKey; echo "<a class=\"dropdown-item\" href=\"$slug\">{$prov['name']}</a>"; } ?>
+                </div>
+            </div>
+            <div class="dropdown d-inline-block prov-btn">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownAt" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $atLand['name']; ?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownAt">
+                    <?php foreach ($at as $slugKey => $prov) { $slug = 'dating-' . $slugKey; echo "<a class=\"dropdown-item\" href=\"$slug\">{$prov['name']}</a>"; } ?>
+                </div>
+            </div>
+            <div class="dropdown d-inline-block prov-btn">
+                <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownCh" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <?php echo $chLand['name']; ?>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownCh">
+                    <?php foreach ($ch as $slugKey => $prov) { $slug = 'dating-' . $slugKey; echo "<a class=\"dropdown-item\" href=\"$slug\">{$prov['name']}</a>"; } ?>
+                </div>
+            </div>
+        </div>
     </div>
     <div id="top-banner"></div>
     <div class="jumbotron jumbotron-sm text-center">
