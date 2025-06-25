@@ -2,10 +2,24 @@
   include('includes/array_prov.php');
   include('includes/header.php');
   include('includes/utils.php');
-	if(isset($_GET['item'])) {
-		$provincie = strip_bad_chars( $_GET['item'] );
-		$zoek = $provincies[$provincie];
-	}
+
+        $country = '';
+        if(isset($_GET['item'])) {
+                $provincie = strip_bad_chars($_GET['item']);
+                if (isset($de[$provincie])) {
+                        $zoek = $de[$provincie];
+                        $country = 'de';
+                } elseif (isset($at[$provincie])) {
+                        $zoek = $at[$provincie];
+                        $country = 'at';
+                } elseif (isset($ch[$provincie])) {
+                        $zoek = $ch[$provincie];
+                        $country = 'ch';
+                } else {
+                        header('Location: 404.php');
+                        exit;
+                }
+        }
 ?>
 <div class="container">
   <div class="jumbotron my-4">
@@ -33,8 +47,8 @@
     </div>
   </div><!-- /.row -->
   <script>
-    var api_url= "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $zoek['name'] . '/120'; ?>";
-  </script> 
+    var api_url= "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $country . '/' . $zoek['name'] . '/120'; ?>";
+  </script>
   <!-- Pagination -->
   <nav class="nav-pag" aria-label="Page navigation">
     <ul class="pagination flex-wrap justify-content-center">
