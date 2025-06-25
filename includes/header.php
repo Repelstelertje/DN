@@ -1,5 +1,8 @@
 <?php
   $companyName = "Dating Nebenan";
+  if (!isset($base)) {
+    $base = dirname(__DIR__);
+  }
   include $base . '/includes/nav_items.php';
   // Config is required for API lookups when rendering profile pages
   // Capture the returned configuration array for later use
