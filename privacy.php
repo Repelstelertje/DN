@@ -1,6 +1,9 @@
 <?php
-    define('TITLE', 'Datenschutzerklärung');
-    include('includes/header.php');
+$base = __DIR__;
+define('TITLE', 'Datenschutzerklärung');
+$canonical = 'https://datingnebenan.de/privacy';
+$pageTitle = 'Privacy Policy - Dating Nebenan';
+include $base . '/includes/header.php';
 ?>
 <div class="container">
     <div class="jumbotron my-4">
@@ -51,4 +54,4 @@
         <p class="mb-0"><em>Zuletzt aktualisiert: Juni 2025</em></p>
     </div>
 </div>
-<?php include('includes/footer.php'); ?>
+<?php include $base . '/includes/footer.php'; ?>

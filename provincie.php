@@ -1,7 +1,7 @@
 <?php
-  include('includes/array_prov.php');
-  include('includes/header.php');
-  include('includes/utils.php');
+  $base = __DIR__;
+  include $base . '/includes/array_prov.php';
+  include $base . '/includes/utils.php';
 
         $country = '';
         if(isset($_GET['item'])) {
@@ -20,6 +20,10 @@
                         exit;
                 }
         }
+
+  $metaDescription = $zoek['meta'];
+
+  include $base . '/includes/header.php';
 ?>
 <div class="container">
   <div class="jumbotron my-4">
@@ -30,7 +34,7 @@
   <div class="row" v-cloak>
     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="Slankie" v-for="profile in filtered_profiles" >
       <div class="card h-100">
-          <a :href="'date-mit-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="'Dating in ' + profile.province + ' mit ' + profile.name" :title="'Siehe das Profil von ' + profile.name + ' aus ' + profile.city" @error="imgError"></a>
+          <a :href="'<?php echo $baseUrl; ?>date-mit-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="'Dating in ' + profile.province + ' mit ' + profile.name" :title="'Siehe das Profil von ' + profile.name + ' aus ' + profile.city" @error="imgError"></a>
           <div class="card-body">
             <div class="card-top">
                 <h4 class="card-title">{{ profile.name }}</h4>  
@@ -42,12 +46,12 @@
               <li class="list-group-item">Bundesland: {{ profile.province }}</li>
             </ul>
           </div>
-          <a :href="'date-mit-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a></div>
+          <a :href="'<?php echo $baseUrl; ?>date-mit-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a></div>
       </div>
     </div>
   </div><!-- /.row -->
   <script>
-    var api_url= "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . $country . '/' . $zoek['name'] . '/120'; ?>";
+    var api_url = "<?php echo $config['PROVINCE_ENDPOINT'] . '/' . rawurlencode($zoek['name']) . '/120'; ?>";
   </script>
   <!-- Pagination -->
   <nav class="nav-pag" aria-label="Page navigation">
@@ -74,4 +78,4 @@
     </div>
   </div>
 </div> <!-- container -->
-<?php include('includes/footer.php');?>
+<?php include $base . '/includes/footer.php'; ?>

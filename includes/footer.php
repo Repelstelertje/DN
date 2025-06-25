@@ -26,12 +26,12 @@
     </form>
   </div>
 </div>
+</main>
 </div> <!-- /.oproepjes -->
 <script src="js/vendor/vue.2.5.13.min.js"></script>
 <script src="js/vendor/axios.0.17.1.min.js"></script>
 <script src="js/vendor/jquery.min.js"></script>
 <script src="js/vendor/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/vue-router@3.5.3"></script>
 <script src="js/cookie-consent.js"></script>
 <script type="text/javascript">
   var topper = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
@@ -39,12 +39,14 @@
   var footer = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
   $('<a href="https://testars-consin.icu/543064f4-6080-4845-8f43-30f049426cdf?site={DN}"><img class="align-center" src="img/banners/' + footer[Math.floor(Math.random() * footer.length)] + '" alt="Spannende Orte für Kontakte"></a>').appendTo('#footer-banner');
 </script>
-<?php
-  if(isset ($type) && $type == "profile"){
-    echo '<script src="js/profile.js"></script>';
-  } else {
-    echo '<script src="js/oproepjes.js"></script>';
-  }
-?>
+<script src="https://unpkg.com/vue-router@3.5.3"></script>
+  <?php
+    if (isset($type) && $type == 'profile') {
+      echo '<script src="js/profile.js"></script>';
+    } else {
+      echo '<script src="js/oproepjes.js"></script>';
+      echo '<script>document.addEventListener("DOMContentLoaded", function(){createOproepjes("#oproepjes", typeof api_url !== "undefined" ? api_url : null);});</script>';
+    }
+  ?>
 </body>
 </html>

@@ -1,15 +1,7 @@
 <?php
-    $config = include('config.php');
-    if (!empty($config['DEBUG'])) {
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
-        error_reporting(E_ALL);
-    }
-    define("TITLE", "Dating Nebenan – Finde Liebe Direkt Um Die Ecke");
-
-    include("includes/array_prov.php");
-    include("includes/array_tips.php");
-    include("includes/header.php");
+$base = __DIR__;
+define("TITLE", "Home");
+include $base . '/includes/header.php';
 ?>
 <div class="container">
     <!-- Jumbotron Header -->
@@ -52,7 +44,7 @@
     <div class="row" v-cloak>
         <div class="col-lg-3 col-md-6 mb-4 portfolio-item" id="Slankie" v-for="profile in filtered_profiles">
             <div class="card h-100">
-                <a :href="'date-mit-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in Flevoland'" @error="imgError"></a>
+                <a :href="'<?php echo $baseUrl; ?>date-mit-' + slugify(profile.name) + '?id=' + profile.id"><img class="card-img-top" :src="profile.src.replace('150x150', '300x300')" :alt="profile.name + ' daten in Flevoland'" @error="imgError"></a>
                 <div class="card-body">
                     <div class="card-top">
                         <h4 class="card-title">{{ profile.name }}</h4>  
@@ -64,7 +56,7 @@
                         <li class="list-group-item">Bundesland: {{ profile.province }}</li>
                     </ul>
                 </div>
-                <a :href="'date-mit-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a>
+                <a :href="'<?php echo $baseUrl; ?>date-mit-' + slugify(profile.name) + '?id=' + profile.id" class="card-footer btn btn-primary">Profil ansehen</a>
             </div>
         </div>
         <script>
@@ -77,10 +69,10 @@
                     <a class="page-link" aria-label="Zurück" v-on:click="set_page_number(page-1)" ><span aria-hidden="true">&laquo;</span><span class="sr-only">Zurück</span></a>
                 </li>
                 <li v-for="page_number in max_page_number" class="page-item" v-bind:class="{ active: page_number == page }" >
-                    <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
-                </li>  
+                  <a class="page-link" v-on:click="set_page_number(page_number)">{{ page_number }}</a>
+                </li>
                 <li class="page-item">
-                    <a class="page-link" aria-label="Nächste" v-on:click="set_page_number(page+1)"><span aria-hidden="true">&raquo;</span><span class="sr-only">Nächste</span></a>
+                  <a class="page-link" aria-label="Nächste" v-on:click="set_page_number(page+1)"><span aria-hidden="true">&raquo;</span><span class="sr-only">Nächste</span></a>
                 </li>
             </ul>
         </nav>
@@ -118,37 +110,31 @@
     </div>
     <div id="footer-banner"></div>
     <div class="jumbotron text-center">
-        <div class="">
-            <a href="https://flirtsuche.com" target="_blank" class="m-0" title="FlirtSuche.com - Finde Deinen perfekten Flirt heute online!">FlirtSuche</a> - 
-            <a href="https://lokaltreffen.com" target="_blank" class="m-0" title="LokalTreffen - Finde Gleichgesinnte in Deiner Nähe heute!">LokalTreffen</a> -
-            <a href="https://meinlokalflirt.com" target="_blank" class="m-0" title="MeinLokalFlirt - Finde heute Deinen Flirt in Deiner Stadt!">MeinLokalFlirt</a> - 
-            <a href="https://meinlokalesingles.com" target="_blank" class="m-0" title="MeinLokaleSingles.com - Singles in Deiner Stadt heute!">MeinLokaleSingles</a> - 
-            <a href="https://meinsingleschat.com" target="_blank" class="m-0" title="MeinSingleChat.com - Chat mit Singles in Deiner Nähe!">MeinSingleChat</a> - 
-            <a href="https://hitzigesingles.com" target="_blank" class="m-0" title="HitzigeSingles.com - Heiße Singles in Deiner Nähe heute!">HitzigeSingles</a> - 
-            <a href="https://lustigesingles.com" target="_blank" class="m-0" title="LustigeSingles.com - Spaß & Liebe in Deiner Nähe heute!">LustigeSingles</a>
-        </div>
+        <a href="https://flirtsuche.com" target="_blank" class="m-0" title="FlirtSuche.com - Finde Deinen perfekten Flirt heute online!">FlirtSuche</a> - 
+        <a href="https://lokaltreffen.com" target="_blank" class="m-0" title="LokalTreffen - Finde Gleichgesinnte in Deiner Nähe heute!">LokalTreffen</a> -
+        <a href="https://meinlokalflirt.com" target="_blank" class="m-0" title="MeinLokalFlirt - Finde heute Deinen Flirt in Deiner Stadt!">MeinLokalFlirt</a> - 
+        <a href="https://meinlokalesingles.com" target="_blank" class="m-0" title="MeinLokaleSingles.com - Singles in Deiner Stadt heute!">MeinLokaleSingles</a> - 
+        <a href="https://meinsingleschat.com" target="_blank" class="m-0" title="MeinSingleChat.com - Chat mit Singles in Deiner Nähe!">MeinSingleChat</a> - 
+        <a href="https://hitzigesingles.com" target="_blank" class="m-0" title="HitzigeSingles.com - Heiße Singles in Deiner Nähe heute!">HitzigeSingles</a> - 
+        <a href="https://lustigesingles.com" target="_blank" class="m-0" title="LustigeSingles.com - Spaß & Liebe in Deiner Nähe heute!">LustigeSingles</a>
         <hr>
-        <div class="">
-            <a href="https://ficklokal.com" target="_blank" class="m-0" title="Ficklokal.com - Finde einen guten Fick in deiner Gegend">Ficklokal</a> - 
-            <a href="https://hitzigemilfs.com" target="_blank" class="m-0" title="HitzigeMilfs.com - Finde heiße MILFs in Deiner Nähe heute!">HitzigeMilfs</a> - 
-            <a href="https://lustigemilfs.com" target="_blank" class="m-0" title="LustigeMilfs.com - Spaß mit MILFs in Deiner Nähe heute!">LustigeMilfs</a> - 
-            <a href="https://reifefrauenchat.com" target="_blank" class="m-0" title="ReifeFrauenChat.com - Chat mit reifen Frauen in Deiner Nähe!">ReifeFrauenChat</a> - 
-            <a href="https://reifefrauenfinder.com" target="_blank" class="m-0" title="ReifeFrauenFinder.com - Finde reife Frauen in Deiner Nähe!">ReifeFrauenFinder</a> - 
-            <a href="https://reifemilfkontakte.com" target="_blank" class="m-0" title="ReifeMilfKontakte.com - Reife MILFs in Deiner Nähe finden!">ReifeMilfKontakte</a> - 
-            <a href="https://reifemilfchat.com" target="_blank" class="m-0" title="ReifeMilfChat.com - Chatte mit reifen MILFs in Deiner Nähe!">ReifeMilfChat</a> - 
-            <a href="https://sexchatfinden.com" target="_blank" class="m-0" title="SexChatFinden.com - Finde Sex-Chats in Deiner Nähe heute!">SexChatFinden</a> - 
-            <a href="https://ficksingles.com" target="_blank" class="m-0" title="FickSingles.com - Heiße Singles für Spaß in Deiner Nähe!">FickSingles</a> - 
-            <a href="https://lustfinden.com" target="_blank" class="m-0" title="LustFinden.com - Finde Lust & Spaß in Deiner Nähe heute!">LustFinden</a> - 
-            <a href="https://geheimesexchat.com" target="_blank" class="m-0" title="GeheimerSexChat.com - Diskreter Sex-Chat in Deiner Nähe!">GeheimerSexChat</a> - 
-            <a href="https://geheimelustchat.com" target="_blank" class="m-0" title="GeheimeLustChat.com - Diskreter Lust-Chat in Deiner Nähe!">GeheimeLustChat</a>    
-        </div>  
+        <a href="https://ficklokal.com" target="_blank" class="m-0" title="Ficklokal.com - Finde einen guten Fick in deiner Gegend">Ficklokal</a> - 
+        <a href="https://hitzigemilfs.com" target="_blank" class="m-0" title="HitzigeMilfs.com - Finde heiße MILFs in Deiner Nähe heute!">HitzigeMilfs</a> - 
+        <a href="https://lustigemilfs.com" target="_blank" class="m-0" title="LustigeMilfs.com - Spaß mit MILFs in Deiner Nähe heute!">LustigeMilfs</a> - 
+        <a href="https://reifefrauenchat.com" target="_blank" class="m-0" title="ReifeFrauenChat.com - Chat mit reifen Frauen in Deiner Nähe!">ReifeFrauenChat</a> - 
+        <a href="https://reifefrauenfinder.com" target="_blank" class="m-0" title="ReifeFrauenFinder.com - Finde reife Frauen in Deiner Nähe!">ReifeFrauenFinder</a> - 
+        <a href="https://reifemilfkontakte.com" target="_blank" class="m-0" title="ReifeMilfKontakte.com - Reife MILFs in Deiner Nähe finden!">ReifeMilfKontakte</a> - 
+        <a href="https://reifemilfchat.com" target="_blank" class="m-0" title="ReifeMilfChat.com - Chatte mit reifen MILFs in Deiner Nähe!">ReifeMilfChat</a> - 
+        <a href="https://sexchatfinden.com" target="_blank" class="m-0" title="SexChatFinden.com - Finde Sex-Chats in Deiner Nähe heute!">SexChatFinden</a> - 
+        <a href="https://ficksingles.com" target="_blank" class="m-0" title="FickSingles.com - Heiße Singles für Spaß in Deiner Nähe!">FickSingles</a> - 
+        <a href="https://lustfinden.com" target="_blank" class="m-0" title="LustFinden.com - Finde Lust & Spaß in Deiner Nähe heute!">LustFinden</a> - 
+        <a href="https://geheimesexchat.com" target="_blank" class="m-0" title="GeheimerSexChat.com - Diskreter Sex-Chat in Deiner Nähe!">GeheimerSexChat</a> - 
+        <a href="https://geheimelustchat.com" target="_blank" class="m-0" title="GeheimeLustChat.com - Diskreter Lust-Chat in Deiner Nähe!">GeheimeLustChat</a>    
         <hr>
-        <div class="">
-            <a href="https://meintranskontakt.com" target="_blank" class="m-0" title="Meintranskontakt.com - Transkontakte in Deutschland finden">Meintranskontakt</a> - 
-            <a href="https://trannytreffen.com" target="_blank" class="m-0" title="Trannytreffen - Finde Trans-Kontakte in Ihrer Nähe heute!">Trannytreffen</a> - 
-            <a href="https://transgenderkontakt.com" target="_blank" class="m-0" title="Transgenderkontakt - Finde lokale Trans in Deiner Nähe!">Transgenderkontakt</a> - 
-            <a href="https://lokalshemale.com" target="_blank" class="m-0" title="Lokalshemale.com - Diskret Shemale Kontakt in Deiner Nähe">Lokalshemale</a>
-        </div>
+        <a href="https://meintranskontakt.com" target="_blank" class="m-0" title="Meintranskontakt.com - Transkontakte in Deutschland finden">Meintranskontakt</a> - 
+        <a href="https://trannytreffen.com" target="_blank" class="m-0" title="Trannytreffen - Finde Trans-Kontakte in Ihrer Nähe heute!">Trannytreffen</a> - 
+        <a href="https://transgenderkontakt.com" target="_blank" class="m-0" title="Transgenderkontakt - Finde lokale Trans in Deiner Nähe!">Transgenderkontakt</a> - 
+        <a href="https://lokalshemale.com" target="_blank" class="m-0" title="Lokalshemale.com - Diskret Shemale Kontakt in Deiner Nähe">Lokalshemale</a>
     </div>
 </div><!-- container -->
-<?php include('includes/footer.php'); ?>
+<?php include $base . '/includes/footer.php'; ?>
