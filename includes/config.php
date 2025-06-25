@@ -8,6 +8,7 @@ return [
     'DEBUG' => getenv('APP_DEBUG') === 'true',
     'BANNER_ENDPOINT' => $api_url . '/profile/banner/12',
     'PROFILE_ENDPOINT' => $api_url . '/profile/get0/9/',
-    'PROVINCE_ENDPOINT' => $api_url . '/profile/province/de',
+    // Base endpoint for province specific profile lists
+    'PROVINCE_ENDPOINT' => $api_url . '/profile/province',
 ];
 ?>
