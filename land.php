@@ -30,7 +30,8 @@
     }
 
     define('TITLE', 'Dating ' . $landTitle);
-    include('includes/header.php');
+    $base = __DIR__;
+    include $base . '/includes/header.php';
 ?>
 <div class="container">
     <div class="jumbotron my-4" >
