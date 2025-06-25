@@ -1,6 +1,7 @@
 <?php
 $base = __DIR__;
 define("TITLE", "Home");
+include $base . '/includes/array_prov.php';
 include $base . '/includes/header.php';
 ?>
 <div class="container">
