@@ -23,15 +23,31 @@
     }
 ?>
 <div class="container">
-  <div class="jumbotron my-4">
-    <h1 class="text-center">Provinzen in <?php echo $landTitle; ?></h1>
-    <hr>
-    <ul class="list-unstyled">
-    <?php foreach ($provinces as $slug => $prov) { ?>
-        <li><a href="provincie.php?item=<?php echo $slug; ?>"><?php echo $prov['name']; ?></a></li>
+    <div class="jumbotron my-4" id="<?php echo $info['id']; ?>">
+        <h1 class="text-center"><?php echo $landInfo['title']; ?></h1>
+        <hr>
+        <p><?php echo $landInfo['intro']; ?></p>
+    </div>
+    <div class="row text-center" id="keuze">
+    <?php
+      foreach ($provArray as $slugKey => $item) {
+          $slug = 'dating-' . $slugKey;
+    ?>
+    <div class="col-lg-3 col-md-6 mb-4">
+      <div class="card h-100 text-left">
+        <a href="<?php echo $slug; ?>"><img class="card-img-top" src="img/front/<?php echo $item['img']; ?>.jpeg" alt="Sexdate <?php echo $item['name']; ?>" @error="imgError"></a>
+        <div class="card-body">
+          <a href="<?php echo $slug; ?>"><h4 class="card-title"><?php echo $item['name']; ?></h4></a>
+          <hr>
+          <p class="card-text"><?php echo $item['meta']; ?></p>
+        </div>
+        <a href="<?php echo $slug; ?>" class="card-footer btn btn-primary">Dating <?php echo $item['name']; ?></a>
+      </div>
+    </div>
     <?php } ?>
-    </ul>
-  </div>
-</div>
-<?php include('includes/footer.php'); ?>
+    </div>
+    <div class="jumbotron">
+        <?php echo $landInfo['tekst']; ?>
+    </div>
+</div><!-- container -->
 

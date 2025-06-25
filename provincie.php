@@ -25,7 +25,7 @@
   <div class="jumbotron my-4">
     <h1 class="text-center"><?php echo $zoek['title']; ?></h1>
     <hr>
-    <p><?php echo $zoek['info']; ?></p>
+    <p><?php echo $zoek['intro']; ?></p>
   </div>
   <div class="row" v-cloak>
     <div class="col-lg-3 col-md-4 col-sm-6 portfolio-item" id="Slankie" v-for="profile in filtered_profiles" >
