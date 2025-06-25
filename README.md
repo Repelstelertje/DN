@@ -6,10 +6,11 @@ This repository contains the source code for **Dating Nebenan**, a small PHP and
 
 1. Ensure you have PHP 7.4 or higher installed.
 2. Clone this repository and install dependencies (none are required outside of the provided `vendor` directory).
-3. Start a development server from the project root:
+3. Start a development server from the project root using the provided
+   `router.php` so that pretty URLs are rewritten correctly:
 
 ```bash
-php -S localhost:8000
+php -S localhost:8000 router.php
 ```
 
 4. Visit `http://localhost:8000` in your browser.
@@ -23,4 +24,7 @@ The project uses a few hard coded URLs that may need to be adjusted for differen
 
 ## Running locally
 
-After updating the URLs if necessary, launch the built‑in PHP server as shown above. The site should load locally with fully static assets and API calls hitting the configured endpoints.
+After updating the URLs if necessary, launch the built‑in PHP server with
+`router.php` to enable URL rewriting as shown above. The site should load
+locally with fully static assets and API calls hitting the configured
+endpoints.
