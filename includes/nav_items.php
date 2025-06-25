@@ -1,101 +1,97 @@
 <?php
-	// Nav Menu Items
-        $navItems = array(
-
-					array(
-						'slug' => 'dating-baden-wurttemberg',
-						'title' => 'Baden-Württemberg'
-					),
-					array(
-						'slug' => 'dating-bayern',
-						'title' => 'Bayern'
-					),
-					array(
-						'slug' => 'dating-berlin',
-						'title' => 'Berlin'
-					),
-					array(
-						'slug' => 'dating-brandenburg',
-						'title' => 'Brandenburg'
-					),
-					array(
-						'slug' => 'dating-bremen',
-						'title' => 'Bremen'
-					),
-					array(
-						'slug' => 'dating-hamburg',
-						'title' => 'Hamburg'
-					),
-					array(
-						'slug' => 'dating-hessen',
-						'title' => 'Hessen'
-					),
-					array(
-						'slug' => 'dating-mecklenburg-vorpommern',
-						'title' => 'Mecklenburg-Vorpommern'
-					),
-					array(
-						'slug' => 'dating-niedersachsen',
-						'title' => 'Niedersachsen'
-					),
-					array(
-						'slug' => 'dating-nordrhein-westfalen',
-						'title' => 'Nordrhein-Westfalen'
-					),
-					array(
-						'slug' => 'dating-rheinland-pfalz',
-						'title' => 'Rheinland-Pfalz'
-					),
-                    array(
-						'slug' => 'dating-saarland',
-						'title' => 'Saarland'
-					),
-                    array(
-						'slug' => 'dating-sachsen',
-						'title' => 'Sachsen'
-					),
-                    array(
-						'slug' => 'dating-sachsen-anhalt',
-						'title' => 'Sachsen-Anhalt'
-					),
-                    array(
-						'slug' => 'dating-schleswig-holstein',
-						'title' => 'Schleswig-Holstein'
-					),
-                    array(
-						'slug' => 'dating-thuringen',
-						'title' => 'Thuringen'
-					),
-                                );
-
-        $navCountries = array(
-                array(
-                        'slug' => 'land.php?land=de',
-                        'title' => 'Dating Deutschland'
-                ),
-                array(
-                        'slug' => 'land.php?land=at',
-                        'title' => 'Dating Österreich'
-                ),
-                array(
-                        'slug' => 'land.php?land=ch',
-                        'title' => 'Dating Schweiz'
-                ),
-        );
-
-        $navItems2 = array(
-
-                                        array(
-                                                'slug' => 'datingtips',
-                                                'title' => 'Datingtipps'
-                                        ),
-					array(
-						'slug' => 'gratis-dating',
-						'title' => 'Gratis-Dating'
-					),
-					array(
-						'slug' => '',
-						'title' => ''
-					),
-				);
+// Nav Menu Items
+$navItems = array(
+	array(
+		'slug' => 'dating-baden-wurttemberg',
+		'title' => 'Baden-Württemberg'
+	),
+	array(
+		'slug' => 'dating-bayern',
+		'title' => 'Bayern'
+	),
+	array(
+		'slug' => 'dating-berlin',
+		'title' => 'Berlin'
+	),
+	array(
+		'slug' => 'dating-brandenburg',
+		'title' => 'Brandenburg'
+	),
+	array(
+		'slug' => 'dating-bremen',
+		'title' => 'Bremen'
+	),
+	array(
+		'slug' => 'dating-hamburg',
+		'title' => 'Hamburg'
+	),
+	array(
+		'slug' => 'dating-hessen',
+		'title' => 'Hessen'
+	),
+	array(
+		'slug' => 'dating-mecklenburg-vorpommern',
+		'title' => 'Mecklenburg-Vorpommern'
+	),
+	array(
+		'slug' => 'dating-niedersachsen',
+		'title' => 'Niedersachsen'
+	),
+	array(
+		'slug' => 'dating-nordrhein-westfalen',
+		'title' => 'Nordrhein-Westfalen'
+	),
+	array(
+		'slug' => 'dating-rheinland-pfalz',
+		'title' => 'Rheinland-Pfalz'
+	),
+	array(
+		'slug' => 'dating-saarland',
+		'title' => 'Saarland'
+	),
+	array(
+		'slug' => 'dating-sachsen',
+		'title' => 'Sachsen'
+	),
+	array(
+		'slug' => 'dating-sachsen-anhalt',
+		'title' => 'Sachsen-Anhalt'
+	),
+	array(
+		'slug' => 'dating-schleswig-holstein',
+		'title' => 'Schleswig-Holstein'
+	),
+	array(
+		'slug' => 'dating-thuringen',
+		'title' => 'Thuringen'
+	),
+);
+$navCountries = array(
+array(
+		'slug' => 'land.php?land=de',
+		'title' => 'Dating Deutschland'
+),
+array(
+		'slug' => 'land.php?land=at',
+		'title' => 'Dating Österreich'
+),
+array(
+		'slug' => 'land.php?land=ch',
+		'title' => 'Dating Schweiz'
+),
+);
+$navItems2 = array(
+	array(
+		'slug' => 'datingtips',
+		'title' => 'Datingtipps'
+	),
+	array(
+		'slug' => 'gratis-dating',
+		'title' => 'Gratis-Dating'
+	),
+	array(
+		'slug' => '',
+		'title' => ''
+	),
+);
 ?>
