@@ -1,6 +1,5 @@
 <?php
     include('includes/array_prov.php');
-    include('includes/header.php');
     include('includes/utils.php');
 
     $land = isset($_GET['land']) ? strip_bad_chars($_GET['land']) : '';
@@ -21,6 +20,14 @@
             $provinces = [];
             $landTitle = '';
     }
+
+    if (empty($landTitle)) {
+        header('Location: 404.php');
+        exit;
+    }
+
+    define('TITLE', 'Dating ' . $landTitle);
+    include('includes/header.php');
 ?>
 <div class="container">
     <div class="jumbotron my-4" id="<?php echo $info['id']; ?>">
