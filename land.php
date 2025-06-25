@@ -60,4 +60,5 @@
         <?php echo $landInfo['tekst']; ?>
     </div>
 </div><!-- container -->
+<?php include('includes/footer.php'); ?>
 
