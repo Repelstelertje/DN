@@ -132,10 +132,10 @@
     // Dynamisch genereren van inhoud gebaseerd op de pagina-URL
     $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
     // Mapping van URL-sleutels naar Open Graph gegevens
-    $og_title = $default_title;
+    $og_title = $title;
     $og_description = $default_description;
     $og_image = $default_image;
-    $og_url = $default_url;
+    $og_url = $canonicalUrl;
     $og_pages = [
         'dating-baden-wurttemberg' => [
             'title' => 'Dating Baden-Wurttemberg',
