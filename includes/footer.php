@@ -39,7 +39,7 @@
   var footer = ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg', '8.jpg', '9.jpg', '10.jpg'];
   $('<a href="https://testars-consin.icu/543064f4-6080-4845-8f43-30f049426cdf?site={DN}"><img class="align-center" src="img/banners/' + footer[Math.floor(Math.random() * footer.length)] + '" alt="Spannende Orte für Kontakte"></a>').appendTo('#footer-banner');
 </script>
-<script src="https://unpkg.com/vue-router@3.5.3"></script>
+<script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js"></script>
   <?php
     if (isset($type) && $type == 'profile') {
       echo '<script src="js/profile.js"></script>';
