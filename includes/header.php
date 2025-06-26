@@ -131,7 +131,7 @@
     $default_url = $baseUrl;
     // Dynamisch genereren van inhoud gebaseerd op de pagina-URL
     $current_url = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-    // Mapping van URL-sleutels naar Open Graph gegevens
+    // Default Open Graph values based on the computed page title and canonical URL
     $og_title = $title;
     $og_description = $default_description;
     $og_image = $default_image;
@@ -221,10 +221,19 @@
     // Zoek een match in de array
     foreach ($og_pages as $keyword => $data) {
         if (strpos($current_url, $keyword) !== false) {
-            $og_title = $data['title'];
-            $og_description = $data['description'];
-            $og_image = $data['image'];
-            $og_url = $current_url;
+            if (isset($data['title'])) {
+                $og_title = $data['title'];
+            }
+            if (isset($data['description'])) {
+                $og_description = $data['description'];
+            }
+            if (isset($data['image'])) {
+                $og_image = $data['image'];
+            }
+            // Provinces may specify a custom URL; otherwise keep the default
+            if (isset($data['url'])) {
+                $og_url = $data['url'];
+            }
             break;
         }
     }
