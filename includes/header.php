@@ -60,7 +60,10 @@
 <meta name="theme-color" content="#ffffff">
 <?php
     // Canonical URL logic
-    $baseUrl = "https://datingnebenan.de";
+    // Use the base URL from config if available
+    if (!isset($baseUrl)) {
+        $baseUrl = getenv('ONL_BASE_URL') ?: 'https://datingnebenan.de';
+    }
     // Default canonical URL uses current request URI so every page gets
     // its own canonical tag. Allow overrides via $canonical and $pageTitle
     $canonicalUrl = isset($canonical) ? $canonical : $baseUrl . $_SERVER['REQUEST_URI'];

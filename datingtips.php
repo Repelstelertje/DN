@@ -37,7 +37,7 @@ if ($tipSlug === null) {
 }
 
 $tips = $datingtips[$tipSlug];
-$metaDescription = 'Datingtipp: ' . $tips['name'];
+$metaDescription = $tips['meta'];
 include $base . '/includes/header.php';
 ?>
 
