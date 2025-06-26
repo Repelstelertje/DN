@@ -2,7 +2,21 @@
 $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $path = rawurldecode($path);
 
+// Reject suspicious paths
+if (strpos($path, '..') !== false || strpos($path, "\0") !== false) {
+    http_response_code(400);
+    exit;
+}
+
 $fullPath = __DIR__ . $path;
+$real = realpath($fullPath);
+if ($real !== false) {
+    if (strpos($real, __DIR__) !== 0) {
+        http_response_code(404);
+        exit;
+    }
+    $fullPath = $real;
+}
 if ($path !== '/' && file_exists($fullPath)) {
     return false; // serve the requested resource as-is
 }
