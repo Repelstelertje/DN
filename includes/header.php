@@ -68,6 +68,11 @@
     if (isset($_GET['item'])) {
         $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
         $title = "Dating " . htmlspecialchars($_GET['item']);
+    } else if (isset($_GET['slug'])) {
+        $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($_GET['slug']));
+        $canonicalUrl = $baseUrl . '/date-mit-' . htmlspecialchars($slug);
+        $titleSlug = ucwords(str_replace('-', ' ', $slug));
+        $title = 'Date mit ' . htmlspecialchars($titleSlug);
     } else if (isset($_GET['id'])) {
         $id = preg_replace('/[^0-9]/', '', $_GET['id']);
         $apiResponse = @file_get_contents("https://23mlf01ccde23.com/profile/get0/8/" . $id);
