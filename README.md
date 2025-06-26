@@ -28,3 +28,12 @@ After updating the URLs if necessary, launch the built‑in PHP server with
 `router.php` to enable URL rewriting as shown above. The site should load
 locally with fully static assets and API calls hitting the configured
 endpoints.
+
+## Sitemap generation
+
+Run `generate_sitemap.php` to build `sitemap.xml` with the latest profile URLs and static routes.
+To keep the sitemap updated automatically, schedule the script via cron after new profiles are added. A daily job looks like:
+
+```cron
+0 0 * * * php /path/to/generate_sitemap.php > /dev/null 2>&1
+```
