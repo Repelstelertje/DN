@@ -71,6 +71,10 @@
     } else if (isset($_GET['slug'])) {
         $slug = preg_replace('/[^a-z0-9-]/', '', strtolower($_GET['slug']));
         $canonicalUrl = $baseUrl . '/date-mit-' . htmlspecialchars($slug);
+        if (isset($_GET['id']) && is_numeric($_GET['id'])) {
+            $id = $_GET['id'];
+            $canonicalUrl .= '?id=' . $id;
+        }
         $titleSlug = ucwords(str_replace('-', ' ', $slug));
         $title = 'Date mit ' . htmlspecialchars($titleSlug);
     } else if (isset($_GET['id'])) {
