@@ -62,9 +62,9 @@
     // Canonical URL logic
     $baseUrl = "https://datingnebenan.de";
     // Default canonical URL uses current request URI so every page gets
-    // its own canonical tag
-    $canonicalUrl = $baseUrl . $_SERVER['REQUEST_URI'];
-    $title = "Dating Nebenan"; // Default title
+    // its own canonical tag. Allow overrides via $canonical and $pageTitle
+    $canonicalUrl = isset($canonical) ? $canonical : $baseUrl . $_SERVER['REQUEST_URI'];
+    $title = isset($pageTitle) ? $pageTitle : "Dating Nebenan"; // Default title
     if (isset($_GET['item'])) {
         $canonicalUrl = $baseUrl . "/dating-" . htmlspecialchars($_GET['item']);
         $title = "Dating " . htmlspecialchars($_GET['item']);
@@ -101,11 +101,14 @@
             $title = 'Dating ' . $titleMap[$code];
         }
     }
-    // When no query parameters are present, build canonical from script name
-    if (empty($_GET)) {
-        $script = basename($_SERVER['SCRIPT_NAME']);
-        if ($script !== 'index.php') {
+    // When no query parameters are present and no custom canonical is provided,
+    // build canonical from script name without the .php extension
+    if (empty($_GET) && !isset($canonical)) {
+        $script = basename($_SERVER['SCRIPT_NAME'], '.php');
+        if ($script !== 'index') {
             $canonicalUrl = $baseUrl . '/' . $script;
+        } else {
+            $canonicalUrl = $baseUrl;
         }
     }
     // Always append site name to the title when not already present
