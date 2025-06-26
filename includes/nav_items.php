@@ -206,15 +206,15 @@ $navItems = array(
 );
 $navCountries = array(
         array(
-                'slug' => 'land.php?land=de',
+                'slug' => '/dating-deutschland',
                 'title' => 'Dating Deutschland'
         ),
         array(
-                'slug' => 'land.php?land=at',
+                'slug' => '/dating-osterreich',
                 'title' => 'Dating Österreich'
         ),
         array(
-                'slug' => 'land.php?land=ch',
+                'slug' => '/dating-schweiz',
                 'title' => 'Dating Schweiz'
         ),
 );
