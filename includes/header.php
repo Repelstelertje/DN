@@ -84,7 +84,7 @@
                 $slug = preg_replace('/\s+/', '-', $slug);
                 $slug = preg_replace('/[^a-z0-9-]/', '', $slug);
                 $slug = trim($slug, '-');
-                $canonicalUrl = $baseUrl . '/date-mit-' . $slug;
+                $canonicalUrl = $baseUrl . '/date-mit-' . $slug . '?id=' . $id;
                 $title = 'Date mit ' . htmlspecialchars($profileName);
             } else {
                 $canonicalUrl = $baseUrl . "/profile?id=" . htmlspecialchars($_GET['id']);
