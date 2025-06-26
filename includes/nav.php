@@ -1,10 +1,13 @@
 <ul class="navbar-nav ml-auto">
     <!-- Land links -->
-    <?php foreach ($navCountries as $land) { ?>
+<?php foreach ($navCountries as $land) { ?>
         <li class="nav-item">
             <a class="nav-link" href="<?php echo $land['slug']; ?>"><?php echo $land['title']; ?></a>
         </li>
-    <?php } ?>
+<?php } ?>
+    <li class="nav-item">
+        <a class="nav-link" href="/datingtips">Datingtipps</a>
+    </li>
     <!-- Datingtips links -->
     <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle drpdwn" href="#" id="navbarDropdownTips" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Datingtipps</a>
