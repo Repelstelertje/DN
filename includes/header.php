@@ -1,6 +1,6 @@
 <?php
   $companyName = "Dating Nebenan";
-  if (!isset($base)) {
+    if (!isset($base)) {
     $base = dirname(__DIR__);
   }
   include $base . '/includes/nav_items.php';
